@@ -12,3 +12,7 @@ export const addArrayOfNumbers = (arrayArg) => {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   return arrayArg.reduce(reducer);
 }
+ 
+export const removeSNames = names => {
+  return names.filter(name => name.charAt(0).toLowerCase() !== 's');
+};

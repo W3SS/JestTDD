@@ -1,4 +1,4 @@
-import { hello, addTwoNumbers, addArrayOfNumbers } from './App';
+import { hello, addTwoNumbers, addArrayOfNumbers, removeSNames } from './App';
 
 describe('hello', () => {
   it('should be an output of hello function', () => {
@@ -44,5 +44,23 @@ describe('addArrayOfNumbers', () => {
   });
   it('should not add isolate numbers', () => {
     expect(addArrayOfNumbers(4)).toBe(null);
+  });
+});
+
+describe('removeSNames', () => {
+  it('should be remove s names', () => {
+    const names = ['Mark', 'George', 'Sasha', 'Seymour'];
+    expect(removeSNames(names)).not.toContain('Seymour');
+    expect(removeSNames(names)).not.toContain('Sasha');
+  });
+  it('should not remove other names', () => {
+    const names = ['Mark', 'George', 'Sasha', 'Seymour'];
+    expect(removeSNames(names)).toContain('George');
+    expect(removeSNames(names)).toContain('Mark');
+  });
+  it('should account for case', () => {
+    const names = ['Mark', 'sasha', 'Sasha', 'Seymour'];
+    expect(removeSNames(names)).not.toContain('sasha');
+    expect(removeSNames(names)).not.toContain('Sasha');
   });
 });

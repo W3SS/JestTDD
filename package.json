@@ -1,0 +1,24 @@
+{
+  "name": "jest-tdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wendel G. Santana",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest --watchAll"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost:1234/",
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  }
+}

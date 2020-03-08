@@ -14,5 +14,11 @@ export const addArrayOfNumbers = (arrayArg) => {
 }
  
 export const removeSNames = names => {
+  if (!Array.isArray(names)) { return null }
   return names.filter(name => name.charAt(0).toLowerCase() !== 's');
+};
+
+export const checkPalindrome = (inputString) => {
+  if (typeof inputString !== 'string') { return null}
+  return [...inputString].reverse().join('') === inputString;
 };

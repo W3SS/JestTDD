@@ -6,3 +6,9 @@ export const addTwoNumbers = (arg1, arg2) => {
   }
   return arg1 + arg2;
 };
+
+export const addArrayOfNumbers = (arrayArg) => {
+  if (!Array.isArray(arrayArg)) { return null }
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return arrayArg.reduce(reducer);
+}
